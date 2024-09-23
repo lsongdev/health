@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Liu Song’s Pages</title>
+  <title>Liu Song’s Health</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="description" content="homepage, blog, music and etc.">
@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Liu Song’s Web">
+  <meta name="apple-mobile-web-app-title" content="Liu Song’s Health">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@lsongdev">
@@ -27,7 +27,7 @@
     <header class="header">
       <a href="/" class="heading">
         <img src="https://lsong.org/icon.svg" alt="logo" class="logo" width="24">
-        <h1 prefix="Lsong’s " class="title">Pages</h1>
+        <h1 prefix="Lsong’s " class="title">Health</h1>
       </a>
       <nav class="nav nav-bar">
         <a href="//lsong.org">home</a>
@@ -46,22 +46,143 @@
           Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
           I have experience in web and mobile development, as well as a background in embedded systems and network
           protocols.
-          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a href="//lsong.org/apps.html">applications</a> in my spare time.
+          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
+            href="//lsong.org/apps.html">applications</a> in my spare time.
           Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
           community.
-          Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free to connect
+          Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free
+          to connect
           with me to discuss ideas.
-          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a href="//lsong.org/games">games</a>.
+          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
+            href="//lsong.org/games">games</a>.
         </p>
       </section>
 
-      <section id="app"></section>
+      <section>
+        <h2>BMI</h2>
+        <p>BMI is a simple application that calculates your body mass index (BMI) based on your height and weight.</p>
+        <form id="bmi">
+          <div class="form-field">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" name="weight" min="0" required>
+          </div>
+          <div class="form-field">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" name="height" min="0" required>
+          </div>
+          <div class="form-field">
+            <button type="submit">Calculate</button>
+          </div>
+        </form>
+        <p id="bmi-result"></p>
+      </section>
+
+      <section>
+        <h2>Body Fat Percentage</h2>
+        <form id="body-fat">
+          <div class="form-field">
+            <label for="bmi-input">BMI</label>
+            <input type="number" id="bmi-input" name="bmi" min="0" step="0.01" required>
+          </div>
+          <div class="form-field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="0" required>
+          </div>
+          <div class="form-field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <button type="submit">Calculate</button>
+          </div>
+        </form>
+        <p id="body-fat-result"></p>
+      </section>
+
+      <section>
+        <h2>Blood Pressure</h2>
+        <form id="blood-pressure">
+          <div class="form-field">
+            <label for="systolic">收缩压 (mmHg):</label>
+            <input type="number" id="systolic" name="systolic" min="0" required>
+          </div>
+          <div class="form-field">
+            <label for="diastolic">舒张压 (mmHg):</label>
+            <input type="number" id="diastolic" name="diastolic" min="0" required>
+          </div>
+          <div class="form-field">
+            <button type="submit">Calculate</button>
+          </div>
+        </form>
+        <p id="blood-pressure-result"></p>
+      </section>
+
+      <section>
+        <h2>BMR and TDEE Calculator</h2>
+        <form id="bmr-tdee">
+          <div class="form-field">
+            <label for="bmr-weight">Weight (kg)</label>
+            <input type="number" id="bmr-weight" name="weight" min="0" step="0.1" required>
+          </div>
+          <div class="form-field">
+            <label for="bmr-height">Height (cm)</label>
+            <input type="number" id="bmr-height" name="height" min="0" step="0.1" required>
+          </div>
+          <div class="form-field">
+            <label for="bmr-age">Age</label>
+            <input type="number" id="bmr-age" name="age" min="0" required>
+          </div>
+          <div class="form-field">
+            <label for="bmr-gender">Gender</label>
+            <select id="bmr-gender" name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="activity-level">Activity Level</label>
+            <select id="activity-level" name="activityLevel" required>
+              <option value="sedentary">Sedentary</option>
+              <option value="light">Lightly Active</option>
+              <option value="moderate">Moderately Active</option>
+              <option value="active">Active</option>
+              <option value="veryActive">Very Active</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <button type="submit">Calculate</button>
+          </div>
+        </form>
+        <p id="bmr-result"></p>
+        <p id="tdee-result"></p>
+      </section>
+
+      <section>
+        <h2>Waist-to-Hip Ratio (WHR) Calculator</h2>
+        <form id="whr">
+          <div class="form-field">
+            <label for="waist">Waist Circumference (cm)</label>
+            <input type="number" id="waist" name="waist" min="0" step="0.1" required>
+          </div>
+          <div class="form-field">
+            <label for="hip">Hip Circumference (cm)</label>
+            <input type="number" id="hip" name="hip" min="0" step="0.1" required>
+          </div>
+          <div class="form-field">
+            <button type="submit">Calculate</button>
+          </div>
+        </form>
+        <p id="whr-result"></p>
+      </section>
 
       <hr />
       <section id="subscribe" class="subscribe">
         <h2>Subscribe</h2>
         <p>Join our occasional newsletter for product launches, availability, job openings, and news:</p>
-        <form action="https://formspree.io/hi@lsong.org" method="post" class="input-group width-full" >
+        <form action="https://formspree.io/hi@lsong.org" method="post" class="input-group width-full">
           <input class="input" type="email" id="email" name="email" required placeholder="email address">
           <button class="button" type="submit">Submit</button>
         </form>
